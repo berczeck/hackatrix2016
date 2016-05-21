@@ -7,13 +7,11 @@ using System.Web.Http;
 
 namespace Api.Api
 {
-    public class HomeController : ApiController
+    public class BookController : ApiController
     {
-        public string GetVersion()
+        public IHttpActionResult GetBooks()
         {
-            return "1.1.0";
+            return Ok("ok");
         }
-
-
     }
 }
