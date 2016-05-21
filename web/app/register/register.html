@@ -12,8 +12,13 @@
         <label for="isbn">Comparte una imagen de tu libro (URL)</label>
     </div>
     <div class="input-field">
-        <input id="isbn" type="text" ng-model="isbn">
+        <input id="isbn" type="text" ng-model="isbn" ng-change="findBookByIsbn()">
         <label for="isbn">ISBN</label>
+        <div class="dropdown-container" ng-show="booksFoundByIsbn.length > 0">
+            <ul id="ddIsbnResult" class="dropdown-content dropdown-found-books-isbn" >
+                <li ng-repeat="bookFound in booksFoundByIsbn" ng-click="selectBookFound($index)"><a href>{{bookFound.name}}</a></li>
+            </ul>
+        </div>
     </div>
     <div class="input-field">
         <input id="title" type="text" ng-model="title">
@@ -38,5 +43,5 @@
         <input type="text" ng-bind="wanted">
         <label for="title">Título o ISBN</label>
     </div>
-    <button class="btn" ng-click="addWantedBook()">Agregar uno <i class="material-icons">+</i></button>
+        <button class="btn" ng-click="addWantedBook()">Agregar uno</button>
 </div>

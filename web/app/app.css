@@ -79,3 +79,17 @@ h4 {
   width: 100%;
   margin-bottom: 1em;
 }
+
+.dropdown-container {
+    position: relative;
+    top: -15px;
+}
+
+.dropdown-found-books-isbn {
+    position: absolute;
+    display: block;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+}
