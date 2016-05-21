@@ -14,7 +14,7 @@
     <div class="input-field">
         <input id="isbn" type="text" ng-model="isbn" ng-change="findBookByIsbn()">
         <label for="isbn">ISBN</label>
-        <div class="dropdown-container" ng-show="booksFoundByIsbn.length > 0">
+        <div class="dropdown-container" ng-show="hastIsbnResults">
             <ul id="ddIsbnResult" class="dropdown-content dropdown-found-books-isbn" >
                 <li ng-repeat="bookFound in booksFoundByIsbn" ng-click="selectBookFound($index)"><a href>{{bookFound.name}}</a></li>
             </ul>
@@ -50,4 +50,14 @@
 <br>
 <div>
     <button class="btn-large" ng-click="saveData()">Registrar</button>
+</div>
+
+<div id="modalConfirmRegister" class="modal ">
+    <div class="modal-content">
+        <h4>Trueque Registrado</h4>
+        <p>Si alquien quiere el libro que buscas, te contacatará</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
 </div>
