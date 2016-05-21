@@ -19,7 +19,11 @@ angular.module('myApp')
     restrict: 'E',
     templateUrl: 'notification.html',
     controller: function ($scope) {
-      // $scope.name = 'Jeff';
+      $scope.notifications = [];
+      firebase.database().ref('notifications/').on('child_added', function(snapshot) {
+        $scope.notifications.push(snapshot.val().notification);
+        $scope.$digest();
+      });
     }
   };
 });
