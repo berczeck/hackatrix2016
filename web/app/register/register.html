@@ -1,1 +1,32 @@
-<h1>registerr</h1>
+<h1>Que ofrezco?</h1>
+<div class="offer">
+    <img ng-src="imageUrl" class="img-post">
+    <div class="input-field">
+        <input id="img-url" type="text" ng-model="imageUrl">
+        <label for="isbn">Image URL</label>
+    </div>
+    <div class="input-field">
+        <input id="isbn" type="text" ng-model="isbn">
+        <label for="isbn">ISBN</label>
+    </div>
+    <div class="input-field">
+        <input id="title" type="text" ng-model="title">
+        <label for="title">Título</label>
+    </div>
+    <div class="input-field">
+        <input id="tags" type="text" ng-model="tags">
+        <label for="tags">Tags (separados por comas (,)</label>
+    </div>
+    <div class="input-field">
+        <textarea id="description" class="materialize-textarea" ng-model="description"></textarea>
+        <label for="description">Descripción/Comentarios</label>
+    </div>
+</div>
+<h2>Que busco?</h2>
+<div class="want">
+    <div class="input-field">
+        <input id="title-want" type="text">
+        <label for="title">Título</label>
+    </div>
+    <button class="btn">Add More <i class="material-icons">+</i></button>
+</div>
