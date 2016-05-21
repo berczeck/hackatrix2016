@@ -6,6 +6,10 @@ body {
   background-size: cover;
 }
 
+h4 {
+  margin-top: 0;
+}
+
 .main-container {
   margin: auto;
   max-width: 600px;
@@ -40,5 +44,18 @@ body {
 .booklist.card-panel {
   float: left;
   width: 100%;
+}
 
+.booklist.card-panel:hover, .booklist.card-panel:active {
+  box-shadow: none;
+  background-color: #2f808a !important;
+}
+
+.match-stuff .img-book, .match-stuff .book-deskcreption {
+  display: inline-block;
+}
+
+.match-stuff .card-panel {
+  display: inline-block;
+  width: 100%;
 }
