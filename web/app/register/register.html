@@ -17,7 +17,7 @@
         <label for="isbn">ISBN</label>
         <div class="dropdown-container" ng-show="hastIsbnResults">
             <ul id="ddIsbnResult" class="dropdown-content dropdown-found-books-isbn" >
-                <li ng-repeat="bookFound in booksFoundByIsbn" ng-click="selectBookFound($index)"><a href>{{bookFound.name}}</a></li>
+                <li ng-repeat="bookFound in booksFoundByIsbn" ng-click="selectBookFound($index)"><a href>{{bookFound.title}}</a></li>
             </ul>
         </div>
     </div>

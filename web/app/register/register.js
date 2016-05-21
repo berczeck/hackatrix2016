@@ -28,7 +28,8 @@ angular.module('myApp.register', ['ngRoute'])
 
     $scope.selectBookFound =  function (index) {
         var bookInfo = $scope.booksFoundByIsbn[index];
-        $scope.title = bookInfo.name;
+        $scope.title = bookInfo.title;
+        $scope.imageUrl = bookInfo.imageUrl;
         $scope.booksFoundByIsbn =[];
         $timeout(function () {
             Materialize.updateTextFields();
@@ -67,13 +68,13 @@ angular.module('myApp.register', ['ngRoute'])
     
     $scope.findBookByIsbn = function (){
         //9781451648546
-        $http.post('http://172.28.11.140/Hackatrix2016/api/books/find?isbn=' + $scope.isbn).then(successSave1, errorSave1);
+        $http.get('http://172.28.11.140/Hackatrix2016/api/books/find?isbn=' + $scope.isbn).then(successSave1, errorSave1);
 
         function successSave1(result) {
             console.log(result);
-            if(result.length > 0){
+            if(result.data){
                 $scope.hastIsbnResults = true;
-                $scope.booksFoundByIsbn = result;
+                $scope.booksFoundByIsbn = [result.data];
             }
         }
 
