@@ -1,5 +1,8 @@
 body {
-  background-image: url(assets/bk.png);
+  background: url(assets/bk.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -9,11 +12,9 @@ body {
   text-align: center;
   padding: 3em;
   box-sizing: border-box;
-  /*background-color: #fff*/
 }
 
 .full-btn {
   width: 100%;
   margin-bottom: 4em;
-
 }
