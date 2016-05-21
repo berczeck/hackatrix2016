@@ -15,6 +15,18 @@
   </div>
 </div>
 
+<div class="input-field col s6">
+  <input ng-keypress="sendComment($event)" ng-model='newComment'  placeholder="Comenta del libro" id="first_name" type="text" class="validate">
+  <!-- <label for="first_name">First Name</label> -->
+</div>
+
+<div>
+  <ul>
+    <li ng-repeat='comment in comments track by $index'>
+      <p>{{comment}}</p>
+    </li>
+  </ul>
+</div>
 
 <div class="row">
   <form class="col s12">
@@ -35,13 +47,18 @@
 <div ng-show="lookingToShare" class="card s12 blue lighten-4 internal-panel">
   <ul>
     <li class="" ng-repeat='book in myBooks'>
-      <a class="waves-effect waves-light btn internal-btns cyan darken-2">{{book.name}}</a>
-      <!-- <div class="card-panel cyan" ng-click="goMatch(book)">
-          <p style="margin: 0" class="white-text">{{book.name}}</p>
-      </div> -->
+      <a class="waves-effect waves-light btn internal-btns cyan darken-2" ng-click='addToInterchange(book.name)'>{{book.name}}</a>
     </li>
   </ul>
 </div>
 
-<a href="#/lookfor" class="waves-effect waves-light btn-large full-btn">Pedir</a>
+<div>
+  <ul>
+    <li ng-repeat='book in toShareBook'>
+      <p>{{book.name}}</p>
+    </li>
+  </ul>
+</div>
+
+<a href="#/lookfor" style='margin-top: 2em' class="waves-effect waves-light btn-large full-btn">Pedir</a>
 
