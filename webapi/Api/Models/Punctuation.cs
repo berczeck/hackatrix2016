@@ -5,10 +5,10 @@ using System.Web;
 
 namespace Api.Models
 {
-    public class Valoracion
+    public class Punctuation
     {
         public string User { get; set; }
         public string Book { get; set; }
-        public int Punto { get; set; }
+        public int Points { get; set; }
     }
 }
