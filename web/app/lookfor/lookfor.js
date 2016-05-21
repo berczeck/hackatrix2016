@@ -19,7 +19,7 @@ angular.module('myApp.lookfor', ['ngRoute'])
 
     for (var i = response.data.length - 1; i >= 0; i--) {
       $scope.books.push({
-        img: response.data[i].imageUrl,
+        img: response.data[i].imageUrl ? response.data[i].imageUrl : 'http://akamaicovers.oreilly.com/images/0636920035848/cat.gif',
         name: response.data[i].title,
         holder: 'juan',
         isbn: response.data[i].isbn

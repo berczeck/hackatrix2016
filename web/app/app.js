@@ -12,10 +12,14 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/init'});
 }]);
 
-// angular.module('myApp')
+angular.module('myApp')
 
-// .directive('myCustomer', function() {
-//   return {
-//     templateUrl: 'app/.html'
-//   };
-// });
+.directive('myNotification', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'notification.html',
+    controller: function ($scope) {
+      // $scope.name = 'Jeff';
+    }
+  };
+});
