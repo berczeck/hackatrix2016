@@ -7,6 +7,6 @@ namespace Api.Models
 {
     public class Post
     {
-        public string MyProperty { get; set; }
+        public Book Book { get; set; }
     }
 }
