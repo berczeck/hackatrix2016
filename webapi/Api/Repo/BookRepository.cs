@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Api.Models;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace Api.Repo
             _database = _client.GetDatabase("book");
         }
 
-        public void Registrar(BookRepository book)
+        public void Registrar(Book book)
         {
-
+            var coleccion = _database.GetCollection<Book>("books");
+            coleccion.InsertOne(book);
         }
 
     }
