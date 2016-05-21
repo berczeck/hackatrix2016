@@ -11,6 +11,26 @@ angular.module('myApp.match', ['ngRoute'])
 
 .controller('MatchCtrl', ['$scope', function ($scope) {
 
+  var database = firebase.database();
+
+  $scope.newComment = '';
+
+  $scope.comments = [];
+
+  $scope.sendComment = function (event) {
+    if(event.keyCode == 13) {
+      firebase.database().ref('comments/').push({
+        comment: $scope.newComment
+      });
+      $scope.newComment = '';
+    }
+  }
+
+  firebase.database().ref('comments/').on('child_added', function(snapshot) {
+    $scope.comments.push(snapshot.val().comment);
+    $scope.$digest();
+  });
+
   $scope.book = {
       // img: 'http://akamaicovers.oreilly.com/images/0636920035848/cat.gif',
       img: 'assets/book.gif',
@@ -51,5 +71,13 @@ angular.module('myApp.match', ['ngRoute'])
       name: 'My book 6'
     }
   ]
+
+  $scope.toShareBook = [];
+
+  $scope.addToInterchange = function (name) {
+    $scope.toShareBook.push({
+      name: name
+    });
+  }
 
 }]);

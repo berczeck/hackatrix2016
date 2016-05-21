@@ -1,3 +1,5 @@
+<my-notification></my-notification>
+
 <div style="text-align: right">
   <a href="#/init" class="waves-effect waves-light btn"> <-- Inicio</a>
 </div>
@@ -18,9 +20,9 @@
       <div class="booklist card-panel cyan" ng-click="goMatch(book)">
         <div class="img-book" ng-style="backgroundImgStyle(book)"></div>
         <div class="book-deskcreption">
-          <h4 class="white-text">{{book.name}}</h4>
-          <p class="yellow-text text-lighten-2">Dueño: {{book.holder}}</p>
-          <p class="yellow-text text-lighten-2">ISBN: {{book.isbn}}</p>
+          <h4 style="text-align: right;" class="white-text">{{book.name}}</h4>
+          <h5 class="white-text">Dueño: {{book.holder}}</h5>
+          <p class="white-text">ISBN: {{book.isbn}}</p>
         </div>
       </div>
     </li>
