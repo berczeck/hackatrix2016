@@ -14,6 +14,7 @@ namespace Api.Repo
         public static IMongoDatabase Database;
 
         public const string BookCollection = "books";
+        public const string AccountCollection = "accounts";
 
         static ConnectionManager()
         {
@@ -29,18 +30,28 @@ namespace Api.Repo
             coleccion.InsertOne(book);
         }
 
+        public void AddComment(Comment comment)
+        {
+            var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
+            
+        }
+
+        public void AddRanking(Ranking commrankingent)
+        {
+
+        }
+        
         public IEnumerable<Book> GetAll()
         {
             var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
-
-            return coleccion.Find<Book>(Builders<Book>.Filter.Empty).ToList();
+            return coleccion.Find<Book>(Builders<Book>.Filter.Eq("borrowed",false)).ToList();
         }
 
         public IEnumerable<Book> FindByTerm(string term)
         {
             var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
             var builder = Builders<Book>.Filter;
-            var filter = builder.Eq("author", term) | builder.Eq("genre", term) | builder.Eq("title", term);
+            var filter = (builder.Eq("author", term) | builder.Eq("genre", term) | builder.Eq("title", term)) & builder.Eq("borrowed", false);
             return coleccion.Find<Book>(filter).ToList();
         }
     }

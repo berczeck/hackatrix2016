@@ -96,9 +96,8 @@
     </Compile>
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Punctuation.cs" />
+    <Compile Include="Models\Ranking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\BookRepository.cs" />
     <Compile Include="Repo\Seed.cs" />

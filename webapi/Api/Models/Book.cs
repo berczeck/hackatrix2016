@@ -14,7 +14,7 @@ namespace Api.Models
         [BsonElement("genre")]
         public string Genre { get; set; }
         [BsonElement("title")]
-        public string Titulo { get; set; }
+        public string Title { get; set; }
         [BsonElement("isbn")]
         public string Isbn { get; set; }
         [BsonElement("author")]
@@ -25,11 +25,13 @@ namespace Api.Models
         public string ImageUrl { get; set; }
         [BsonElement("description")]
         public string Description { get; set; }
-        [BsonElement("identifier")]
-        public string Identifier { get; set; }
+        [BsonElement("borrowed")]
+        public bool Borrowed { get; set; }
+        [BsonElement("owner")]
+        public ObjectId OwnerId { get; set; }
+        [BsonElement("requestedById")]
+        public ObjectId RequestedById { get; set; }
         [BsonElement("comments")]
         public Comment[] Comments { get; set; }
     }
 }
-
-//{[]}

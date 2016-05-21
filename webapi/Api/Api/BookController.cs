@@ -47,7 +47,22 @@ namespace Api.Api
         [Route("")]
         public IHttpActionResult Post(Book book)
         {
-            return Ok("OK");
+            repo.Add(book);
+            return Ok();
+        }
+
+        [Route("comment")]
+        public IHttpActionResult Post(Comment comment)
+        {
+            repo.AddComment(comment);
+            return Ok();
+        }
+
+        [Route("rank")]
+        public IHttpActionResult Post(Ranking ranking)
+        {
+            repo.AddComment(book);
+            return Ok();
         }
     }
 
