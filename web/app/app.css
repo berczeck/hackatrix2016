@@ -1,0 +1,19 @@
+body {
+  background-image: url(assets/bk.png);
+  background-size: cover;
+}
+
+.main-container {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 3em;
+  box-sizing: border-box;
+  background-color: #fff
+}
+
+.full-btn {
+  width: 100%;
+  margin-bottom: 4em;
+
+}
