@@ -25,4 +25,31 @@ angular.module('myApp.match', ['ngRoute'])
     return {"background-image": "url(" + book.img + ")"};
   }
 
+  $scope.lookingToShare = false;
+
+  $scope.goLooking = function () {
+    $scope.lookingToShare = !$scope.lookingToShare;
+  }
+
+  $scope.myBooks = [
+    {
+      name: 'My book 1'
+    },
+    {
+      name: 'My book 2'
+    },
+    {
+      name: 'My book 3'
+    },
+    {
+      name: 'My book 4'
+    },
+    {
+      name: 'My book 5'
+    },
+    {
+      name: 'My book 6'
+    }
+  ]
+
 }]);

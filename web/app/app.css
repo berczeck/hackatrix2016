@@ -63,3 +63,19 @@ h4 {
   display: inline-block;
   width: 100%;
 }
+
+.mrg-bn {
+  margin-bottom: 2em;
+}
+
+.internal-panel {
+  padding: 1em;
+  box-sizing: border-box;
+  max-height: 15em;
+  overflow-y: scroll;
+}
+
+.internal-btns {
+  width: 100%;
+  margin-bottom: 1em;
+}

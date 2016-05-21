@@ -27,7 +27,21 @@
   </form>
 </div>
 
+<h5>Te cambio el libro por:</h5>
 
+<a class="mrg-bn btn-floating btn-large waves-effect waves-light red" ng-click='goLooking()'><i class="material-icons">add</i></a>
+
+
+<div ng-show="lookingToShare" class="card s12 blue lighten-4 internal-panel">
+  <ul>
+    <li class="" ng-repeat='book in myBooks'>
+      <a class="waves-effect waves-light btn internal-btns cyan darken-2">{{book.name}}</a>
+      <!-- <div class="card-panel cyan" ng-click="goMatch(book)">
+          <p style="margin: 0" class="white-text">{{book.name}}</p>
+      </div> -->
+    </li>
+  </ul>
+</div>
 
 <a href="#/lookfor" class="waves-effect waves-light btn-large full-btn">Pedir</a>
 
