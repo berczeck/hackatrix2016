@@ -26,24 +26,29 @@ namespace Api.GoogleBookApi
             if (result != null && result.Items != null)
             {
                 var item = result.Items.FirstOrDefault();
-
-                Book book = new Book()
-                {
-                    Title = item.VolumeInfo.Title                    
-                };
-
-                if (item.VolumeInfo.ImageLinks != null && item.VolumeInfo.ImageLinks.Thumbnail != null)
-                {
-                    book.ImageUrl = item.VolumeInfo.ImageLinks.Thumbnail;
-                }
-                else
-                {
-                    book.ImageUrl = IMAGE_NOT_FOUND;
-                }
-
-                return book;
+                                
+                return ToBook(item);
             }
             return null;
+        }
+
+        private static Book ToBook(Volume volume)
+        {
+            Book book = new Book()
+            {
+                Title = volume.VolumeInfo.Title
+            };
+
+            if (volume.VolumeInfo.ImageLinks != null && volume.VolumeInfo.ImageLinks.Thumbnail != null)
+            {
+                book.ImageUrl = volume.VolumeInfo.ImageLinks.Thumbnail;
+            }
+            else
+            {
+                book.ImageUrl = IMAGE_NOT_FOUND;
+            }
+
+            return book;
         }
     }
 }

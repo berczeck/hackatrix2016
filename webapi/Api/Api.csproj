@@ -137,7 +137,6 @@
     <Compile Include="Actors\BookActor.cs" />
     <Compile Include="Actors\ContextManager.cs" />
     <Compile Include="Api\BookController.cs" />
-    <Compile Include="Api\HomeController.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,7 +165,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

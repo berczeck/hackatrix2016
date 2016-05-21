@@ -11,3 +11,11 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/init'});
 }]);
+
+// angular.module('myApp')
+
+// .directive('myCustomer', function() {
+//   return {
+//     templateUrl: 'app/.html'
+//   };
+// });

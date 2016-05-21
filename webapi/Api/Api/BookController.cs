@@ -68,9 +68,7 @@ namespace Api.Api
         [Route("find")]
         public Book GetByISBN(string isbn)
         {
-            var bookResult = GoogleBookApi.BookSearch.SearchByISBN(isbn);
-
-            return null;
+            return GoogleBookApi.BookSearch.SearchByISBN(isbn).Result;
         }
     }
 

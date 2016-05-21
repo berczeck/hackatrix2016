@@ -8,12 +8,17 @@ namespace Api.Actors
 {
     public class ContextManager
     {
-        public static IActorRef BookActor;
+        private static IActorRef BookActor;
 
         public static void Init()
         {
             var system = ActorSystem.Create("truqueando");
             BookActor = system.ActorOf<BookActor>("book");
+        }
+
+        public static void SendMessage<T>(T message)
+        {
+            BookActor.Tell(message);
         }
     }
 }
