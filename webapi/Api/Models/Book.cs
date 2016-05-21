@@ -10,7 +10,8 @@ namespace Api.Models
         public string Genero { get; set; }
         public string Codigo { get; set; }
         public string  Autor { get; set; }
-        public string[] MyProperty { get; set; }
+        public string[] Tags { get; set; }
+        public string UrlImagen { get; set; }
     }
 }
 

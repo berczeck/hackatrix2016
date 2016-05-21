@@ -17,7 +17,10 @@ namespace Api.Repo
             _database = _client.GetDatabase("book");
         }
 
+        public void Registrar(BookRepository book)
+        {
 
+        }
 
     }
 }
