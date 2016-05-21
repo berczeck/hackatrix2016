@@ -1,0 +1,47 @@
+<div style="text-align: right">
+  <a href="#/lookfor" class="waves-effect waves-light btn"> <-- Listado</a>
+</div>
+
+<div class="match-stuff">
+  <div class="card-panel cyan">
+    <div class="img-book" ng-style="backgroundImgStyle(book)"></div>
+    <div class="book-deskcreption">
+      <h4 class="white-text">{{book.name}}</h4>
+      <p class="yellow-text text-lighten-2">Dueño: {{book.holder}}</p>
+      <p class="yellow-text text-lighten-2">ISBN: {{book.isbn}}</p>
+      <p class="yellow-text text-lighten-2">Descripción: {{book.desc}}</p>
+      <p class="yellow-text text-lighten-2">Tagas: {{book.tags}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Mas sobre ti y tu pedido</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<h5>Te cambio el libro por:</h5>
+
+<a class="mrg-bn btn-floating btn-large waves-effect waves-light red" ng-click='goLooking()'><i class="material-icons">add</i></a>
+
+
+<div ng-show="lookingToShare" class="card s12 blue lighten-4 internal-panel">
+  <ul>
+    <li class="" ng-repeat='book in myBooks'>
+      <a class="waves-effect waves-light btn internal-btns cyan darken-2">{{book.name}}</a>
+      <!-- <div class="card-panel cyan" ng-click="goMatch(book)">
+          <p style="margin: 0" class="white-text">{{book.name}}</p>
+      </div> -->
+    </li>
+  </ul>
+</div>
+
+<a href="#/lookfor" class="waves-effect waves-light btn-large full-btn">Pedir</a>
+

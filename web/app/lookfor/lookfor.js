@@ -9,7 +9,7 @@ angular.module('myApp.lookfor', ['ngRoute'])
   });
 }])
 
-.controller('LookforCrtl', ['$scope', function($scope) {
+.controller('LookforCrtl', ['$scope','$location', function($scope, $location) {
 
   $scope.books = [
     {
@@ -46,6 +46,10 @@ angular.module('myApp.lookfor', ['ngRoute'])
 
   $scope.backgroundImgStyle = function (book) {
     return {"background-image": "url(" + book.img + ")"};
+  }
+
+  $scope.goMatch = function (book) {
+    $location.url('/match')
   }
 
 }]);

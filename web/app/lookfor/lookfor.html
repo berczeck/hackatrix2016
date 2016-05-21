@@ -1,3 +1,7 @@
+<div style="text-align: right">
+  <a href="#/init" class="waves-effect waves-light btn"> <-- Inicio</a>
+</div>
+
 <div class="row">
   <form class="col s12">
     <div class="row">
@@ -11,7 +15,7 @@
 
   <ul>
     <li class="left-fix" ng-repeat='book in books | filter:lookForBook'>
-      <div class="booklist card-panel cyan">
+      <div class="booklist card-panel cyan" ng-click="goMatch(book)">
         <div class="img-book" ng-style="backgroundImgStyle(book)"></div>
         <div class="book-deskcreption">
           <h4 class="white-text">{{book.name}}</h4>

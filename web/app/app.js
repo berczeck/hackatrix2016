@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.init',
   'myApp.lookfor',
-  'myApp.register'
+  'myApp.register',
+  'myApp.match'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/init'});
