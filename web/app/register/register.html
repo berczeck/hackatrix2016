@@ -1,13 +1,15 @@
+
 <div style="text-align: right">
   <a href="#/init" class="waves-effect waves-light btn"> <-- Inicio</a>
 </div>
 
-<h1>Que ofrezco?</h1>
+<h2>Que ofrezco?</h2>
+
 <div class="offer">
-    <img ng-src="imageUrl" class="img-post">
+    <img ng-src="{{imageUrl}}" class="responsive-img img-post">
     <div class="input-field">
         <input id="img-url" type="text" ng-model="imageUrl">
-        <label for="isbn">Image URL</label>
+        <label for="isbn">Comparte una imagen de tu libro (URL)</label>
     </div>
     <div class="input-field">
         <input id="isbn" type="text" ng-model="isbn">
@@ -16,6 +18,10 @@
     <div class="input-field">
         <input id="title" type="text" ng-model="title">
         <label for="title">Título</label>
+    </div>
+    <div class="input-field">
+        <input id="locations" type="text" ng-model="locations">
+        <label for="locations">Donde intercambias?</label>
     </div>
     <div class="input-field">
         <input id="tags" type="text" ng-model="tags">
@@ -28,9 +34,9 @@
 </div>
 <h2>Que busco?</h2>
 <div class="want">
-    <div class="input-field">
-        <input id="title-want" type="text">
-        <label for="title">Título</label>
+    <div class="input-field" ng-repeat="wanted in wantedBooks track by $index">
+        <input type="text" ng-bind="wanted">
+        <label for="title">Título o ISBN</label>
     </div>
-    <button class="btn">Add More <i class="material-icons">+</i></button>
+    <button class="btn" ng-click="addWantedBook()">Agregar uno <i class="material-icons">+</i></button>
 </div>

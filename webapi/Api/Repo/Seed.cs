@@ -10,30 +10,43 @@ namespace Api.Repo
     {
         public static void Init()
         {
-            var libros = new []{
+            var books = new[]{
                 new Book{
                     Autor="RR Martin",
-                    Titulo="Game of thrones",
+                    Title="Game of thrones",
                     Description="LIbro sin usar",
                     Genre="Ficcion",
-                    Identifier=Guid.NewGuid().ToString(),
                     Isbn    ="123213-123123-123",
                     ImageUrl="http://local/ima.jpg"
                 },new Book{
                     Autor="JK Rowlin",
-                    Titulo="Harry Potter",
+                    Title="Harry Potter",
                     Description="LIbro sin usar",
                     Genre="Ficcion",
-                    Identifier=Guid.NewGuid().ToString(),
                     Isbn    ="123213-123123-123",
                     ImageUrl="http://local/ima.jpg"
                 }
             };
 
-            ConnectionManager.Database.DropCollection(ConnectionManager.BookCollection);
-            
-            var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
-            coleccion.InsertMany(libros);
+            ConnectionManager.DropCollection(ConnectionManager.BookCollection);
+
+            var bookCollection = ConnectionManager.GetBookCollection();
+            bookCollection.InsertMany(books);
+
+            var users = new[]{
+                new Account{
+                    Name="trueque",
+                    User="trueque@gmail.com"
+                },
+                new Account{
+                    Name="dev",
+                    User="dev@gmail.com"
+                }
+            };
+
+            ConnectionManager.DropCollection(ConnectionManager.BookCollection);
+            var accountCollection = ConnectionManager.GetAccountCollection();
+            accountCollection.InsertMany(users);
         }
     }
 }
