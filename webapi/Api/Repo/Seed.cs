@@ -28,9 +28,9 @@ namespace Api.Repo
                 }
             };
 
-            ConnectionManager.Database.DropCollection(ConnectionManager.BookCollection);
+            ConnectionManager.DropCollection(ConnectionManager.BookCollection);
 
-            var bookCollection = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
+            var bookCollection = ConnectionManager.GetBookCollection();
             bookCollection.InsertMany(books);
 
             var users = new[]{
@@ -44,8 +44,8 @@ namespace Api.Repo
                 }
             };
 
-            ConnectionManager.Database.DropCollection(ConnectionManager.BookCollection);
-            var accountCollection = ConnectionManager.Database.GetCollection<Account>(ConnectionManager.AccountCollection);
+            ConnectionManager.DropCollection(ConnectionManager.BookCollection);
+            var accountCollection = ConnectionManager.GetAccountCollection();
             accountCollection.InsertMany(users);
         }
     }

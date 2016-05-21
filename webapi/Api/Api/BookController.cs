@@ -12,11 +12,11 @@ namespace Api.Api
     [RoutePrefix("api/books")]
     public class BooksController : ApiController
     {
-        private readonly BookRepository repo;
+        private readonly BookQueryRepository repo;
 
         public BooksController()
         {
-            repo = new BookRepository();
+            repo = new BookQueryRepository();
         }
 
         [Route("all")]
@@ -47,21 +47,21 @@ namespace Api.Api
         [Route("")]
         public IHttpActionResult Post(Book book)
         {
-            repo.Add(book);
+            
             return Ok();
         }
 
         [Route("comment")]
         public IHttpActionResult Post(Comment comment)
         {
-            repo.AddComment(comment);
+            
             return Ok();
         }
 
         [Route("rank")]
         public IHttpActionResult Post(Ranking ranking)
         {
-            repo.AddComment(book);
+            
             return Ok();
         }
     }
