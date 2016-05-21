@@ -19,9 +19,9 @@ namespace Api.GoogleBookApi
             ApiKey = API_KEY,
         });
 
-        public static async Task<Book> SearchByISBN(string isbn)
+        public static Book SearchByISBN(string isbn)
         {
-            var result = await service.Volumes.List(string.Format("isbn:{0}", isbn)).ExecuteAsync();
+            var result = service.Volumes.List(string.Format("isbn:{0}", isbn)).Execute();
 
             if (result != null && result.Items != null)
             {

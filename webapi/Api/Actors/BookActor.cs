@@ -14,6 +14,7 @@ namespace Api.Actors
 
         public BookActor()
         {
+            repo = new BookCommandRepository();
             Receive<AddComment>(x => repo.AddComment(x.Comment));
             Receive<AddRanking>(x => repo.AddRanking(x.Ranking));
             Receive<AddBook>(x => repo.Add(x.Book));
