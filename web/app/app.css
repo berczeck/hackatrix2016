@@ -15,5 +15,27 @@ body {
 .full-btn {
   width: 100%;
   margin-bottom: 4em;
+}
 
+.left-fix {
+  float: left;
+  width: 100%;
+}
+
+.img-book {
+  width: 20%;
+  height: 9em;
+  float: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.book-deskcreption {
+  width: 80%;
+  float: left;
+}
+
+.booklist.card-panel {
+  float: left;
+  width: 100%;
 }
