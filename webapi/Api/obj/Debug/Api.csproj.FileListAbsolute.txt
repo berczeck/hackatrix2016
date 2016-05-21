@@ -16,3 +16,4 @@ C:\Users\User\Desktop\Install\Hackatrix2016\hackatrix2016\webapi\Api\bin\MongoDB
 C:\Users\User\Desktop\Install\Hackatrix2016\hackatrix2016\webapi\Api\bin\MongoDB.Driver.dll
 C:\Users\User\Desktop\Install\Hackatrix2016\hackatrix2016\webapi\Api\bin\MongoDB.Bson.xml
 C:\Users\User\Desktop\Install\Hackatrix2016\hackatrix2016\webapi\Api\bin\MongoDB.Driver.xml
+C:\Users\User\Desktop\Install\Hackatrix2016\hackatrix2016\webapi\Api\obj\Debug\Api.csprojResolveAssemblyReference.cache

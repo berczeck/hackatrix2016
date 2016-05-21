@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +9,26 @@ namespace Api.Models
 {
     public class Book
     {
-        [BsonElement("genero")]
-        public string Genero { get; set; }
+        [BsonElement("_id")]
+        public ObjectId Id { get; set; }
+        [BsonElement("genre")]
+        public string Genre { get; set; }
+        [BsonElement("title")]
+        public string Titulo { get; set; }
         [BsonElement("isbn")]
         public string Isbn { get; set; }
-        [BsonElement("genero")]
+        [BsonElement("author")]
         public string  Autor { get; set; }
-        [BsonElement("genero")]
+        [BsonElement("tags")]
         public string[] Tags { get; set; }
-        [BsonElement("genero")]
-        public string UrlImagen { get; set; }
-        [BsonElement("descripcion")]
-        public string Descripcion { get; set; }
-        [BsonElement("identificador")]
-        public string Identificador { get; set; }
-        [BsonElement("comentarios")]
-        public Comentario[] Comentarios { get; set; }
+        [BsonElement("imageUrl")]
+        public string ImageUrl { get; set; }
+        [BsonElement("description")]
+        public string Description { get; set; }
+        [BsonElement("identifier")]
+        public string Identifier { get; set; }
+        [BsonElement("comments")]
+        public Comment[] Comments { get; set; }
     }
 }
 

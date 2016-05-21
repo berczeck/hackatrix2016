@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Api.Models
 {
-    public class Comentario
+    public class Comment
     {
     }
 }
