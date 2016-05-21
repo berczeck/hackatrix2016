@@ -64,6 +64,12 @@ namespace Api.Api
             
             return Ok();
         }
+
+        [Route("find")]
+        public Book GetByISBN(string isbn)
+        {
+            return GoogleBookApi.BookSearch.SearchByISBN(isbn).Result;
+        }
     }
 
 }
