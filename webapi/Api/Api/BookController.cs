@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Api.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,11 +8,26 @@ using System.Web.Http;
 
 namespace Api.Api
 {
-    public class BookController : ApiController
+    [RoutePrefix("api/books")]
+    public class BooksController : ApiController
     {
-        public IHttpActionResult GetBooks()
+        [Route("")]
+        public IHttpActionResult Get(string term)
         {
-            return Ok("ok");
+            return Ok(term);
+        }
+
+        [Route("{id:int}")]
+        public string Get(int id)
+        {
+            return "OK";
+        }
+
+        [Route("")]
+        public IHttpActionResult Post(Book book)
+        {
+            return Ok("OK");
         }
     }
+
 }
