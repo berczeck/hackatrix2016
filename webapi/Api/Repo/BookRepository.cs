@@ -32,7 +32,7 @@ namespace Api.Repo
         public IEnumerable<Book> GetAll()
         {
             var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
-            
+
             return coleccion.Find<Book>(Builders<Book>.Filter.Empty).ToList();
         }
 
@@ -40,7 +40,7 @@ namespace Api.Repo
         {
             var coleccion = ConnectionManager.Database.GetCollection<Book>(ConnectionManager.BookCollection);
             var builder = Builders<Book>.Filter;
-            var filter = builder.Eq("x", 10) & builder.Lt("y", 20);
+            var filter = builder.Eq("author", term) | builder.Eq("genre", term) | builder.Eq("title", term);
             return coleccion.Find<Book>(filter).ToList();
         }
     }

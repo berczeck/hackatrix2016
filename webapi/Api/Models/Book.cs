@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace Api.Models
 {
     public class Book
     {
+        [BsonElement("_id")]
+        public ObjectId Id { get; set; }
         [BsonElement("genre")]
         public string Genre { get; set; }
         [BsonElement("title")]

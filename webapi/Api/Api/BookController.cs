@@ -14,11 +14,15 @@ namespace Api.Api
     {
         private readonly BookRepository repo;
 
-        [Route("reset")]
-        public IHttpActionResult Get()
+        public BooksController()
         {
-            Seed.Init();
-            return Ok("OK");
+            repo = new BookRepository();
+        }
+
+        [Route("all")]
+        public IEnumerable<Book> GetAll()
+        {
+            return repo.GetAll();
         }
 
         [Route("reset")]
